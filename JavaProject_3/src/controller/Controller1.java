@@ -32,7 +32,7 @@ public class Controller1 {
 		new Controller1().start();
 	}
 
-	private void start() {
+	 void start() {
 		View view = View.HOME;
 		while(true){
 			switch(view) {
@@ -43,7 +43,7 @@ public class Controller1 {
 		}
 	}
 
-	private View home() {
+	 View home() {
 //		printHome();
 		return null;
 	}

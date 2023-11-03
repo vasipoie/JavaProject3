@@ -102,7 +102,9 @@ public class Controller {
 		/*
 		 * sql에 파라미터 넣을때는 ?로 넣는다
 		 */
-		String sql = "select board_no, board_name, board_writer, TO_CHAR(BOARD_DATE,'YYYY-MM-DD') BOARD_DATE, board_content from free_board where board_no=?";
+		String sql = "select board_no, board_name, board_writer, "
+				+ "TO_CHAR(BOARD_DATE,'YYYY-MM-DD') BOARD_DATE, board_content "
+				+ "from free_board where board_no=?";
 		List l = new ArrayList<>();
 		l.add(board_no);
 		Map<String, Object>	map = jdbc.selectOne(sql, l);
@@ -114,7 +116,9 @@ public class Controller {
 	
 	public List<FreeBoard> selectList() {
 		//전체 게시판 조회
-		String sql = "SELECT board_no, board_name, board_writer, TO_CHAR(BOARD_DATE,'YYYY-MM-DD') BOARD_DATE, board_content FROM FREE_BOARD WHERE BOARD_DELYN IS NULL";
+		String sql = "SELECT board_no, board_name, board_writer, "
+				+ "TO_CHAR(BOARD_DATE,'YYYY-MM-DD') BOARD_DATE, board_content "
+				+ "FROM FREE_BOARD WHERE BOARD_DELYN IS NULL";
 		List<Map<String, Object>> l = jdbc.selectList(sql);
 		/*
 		 * VO로 바꾸는거
